@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal de Treinamento</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-nome" onclick="limparSecao()" style="cursor: pointer;">
+            <h1><span class="roxo">TH</span> Internet</h1>
+            <p>Treinamento</p>
+        </div>
+
+        <input type="text" id="pesquisa" placeholder="Pesquisar..." />
+        <ul>
+            <li><a href="#" onclick="mostrarSecao('diagnostico-internet')">Diagnóstico de Internet</a></li>
+        </ul>
+    </div>
+
+    <div class="conteudo" id="conteudo-principal">
+        <section id="diagnostico-internet" style="display: none;">
+            <h2>Diagnosticando Problemas de Internet</h2>
+
+            <p>Para oferecer um bom suporte aos nossos clientes, é essencial entender como os equipamentos funcionam.
+                Este guia ajuda a identificar problemas na internet usando as luzes indicadoras e a verificação dos
+                cabos.</p>
+
+            <h3>Tipos de Equipamentos</h3>
+            <ul>
+                <li><strong>ONU + Roteador</strong>: Equipamentos separados, cada um com uma função específica.</li>
+                <li><strong>ONT</strong>: Equipamento único que faz tudo — recebe, decodifica e distribui o sinal.</li>
+            </ul>
+
+            <h3>Luzes Indicadoras</h3>
+            <p>Essas luzes são praticamente padrão e ajudam no diagnóstico:</p>
+            <ul>
+                <li><strong>Power (energia):</strong> Verde = ligado / Apagado = sem energia</li>
+                <li><strong>PON:</strong> Verde estático = OK / Piscando = não autenticado / Vermelha = sem rede</li>
+                <li><strong>LOS:</strong> Vermelha = problema na fibra</li>
+                <li><strong>LAN:</strong> Verde = conectado / Apagado = sem conexão</li>
+            </ul>
+
+            <h3>Verificação de Cabos</h3>
+            <ul>
+                <li>ONU: usar sempre a <strong>porta LAN1</strong></li>
+                <li>Roteador: usar a <strong>porta WAN</strong></li>
+                <li>Erros comuns: cabos em portas erradas ou mal encaixados</li>
+            </ul>
+
+            <h3>Resumo de Problemas Comuns</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Luz / Situação</th>
+                        <th>Possível Causa</th>
+                        <th>Ação Recomendável</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LOS vermelha</td>
+                        <td>Cabo de fibra rompido</td>
+                        <td>Agendar visita técnica</td>
+                    </tr>
+                    <tr>
+                        <td>PON piscando</td>
+                        <td>ONU não autenticada</td>
+                        <td>Provisionar (descadastrar e cadastrar)</td>
+                    </tr>
+                    <tr>
+                        <td>Tudo verde, sem internet</td>
+                        <td>Equipamento travado</td>
+                        <td>Reiniciar ou agendar visita</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Dicas Finais</h3>
+            <ul>
+                <li>Observe luzes e cabos com atenção.</li>
+                <li>Peça vídeos ao cliente sempre que possível.</li>
+                <li>Seja claro e paciente ao orientar.</li>
+                <li>Persistindo o problema: agende visita técnica.</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
