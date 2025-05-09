@@ -22,20 +22,36 @@ document.getElementById("pesquisa").addEventListener("input", function () {
         }
     });
 });
-
 function mostrarSecao(id) {
-    // Esconde todas as seções
+
     const secoes = document.querySelectorAll(".conteudo section");
     secoes.forEach(secao => secao.style.display = "none");
 
-    // Mostra a seção escolhida
     const alvo = document.getElementById(id);
     if (alvo) {
         alvo.style.display = "block";
         alvo.scrollIntoView({ behavior: "smooth" });
     }
+
 }
 function limparSecao() {
-    const secoes = document.querySelectorAll(".conteudo section");
-    secoes.forEach(secao => secao.style.display = "none");
+    const conteudoPrincipal = document.getElementById("conteudo-principal");
+    const conteudoDinamico = document.getElementById("conteudo-dinamico");
+
+    if (conteudoDinamico) {
+        conteudoDinamico.remove();
+    }
+
+    conteudoPrincipal.style.display = "block";
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("toggleSidebar");
+    const sidebar = document.querySelector(".sidebar");
+    const conteudo = document.querySelector(".conteudo");
+
+    toggleButton.addEventListener("click", () => {
+        sidebar.classList.toggle("closed");
+        conteudo.classList.toggle("expandido");
+    });
+});
