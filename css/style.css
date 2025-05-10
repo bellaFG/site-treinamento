@@ -9,47 +9,23 @@ body {
     height: 100vh;
 }
 
-.text-light {
-    color: #cfcfcf;
-}
-
-.text-dark {
-    color: #333;
-}
-
-.text-white {
-    color: white;
-}
-
-.text-roxo {
-    color: #4b0bc0;
-}
-
-.font-bold {
-    font-weight: 600;
-}
-
-.font-light {
-    font-weight: 300;
-}
-
 #toggleSidebar {
     position: absolute;
     top: 10px;
     left: 10px;
     z-index: 1000;
-    background-color: #6200ea;
+    background-color: #03a3ff;
     color: white;
     border: none;
-    padding: 8px 12px;
-    font-size: 18px;
+    padding: 6px 12px;
+    font-size: 25px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 .sidebar {
     width: 350px;
-    background-color: #218de6;
+    background-color: #03a3ff;
     color: white;
     padding: 20px;
     height: 100vh;
@@ -58,6 +34,7 @@ body {
     left: 0;
     overflow-y: auto;
     transition: transform 0.8s ease;
+
 }
 
 
@@ -96,6 +73,7 @@ body {
 .logo-nome h1 {
     font-size: 40px;
     color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.452);
     margin: 0;
     font-weight: 600;
     line-height: 1.1;
@@ -103,7 +81,7 @@ body {
 
 .logo-nome p {
     font-size: 26px;
-    color: #cfcfcf;
+    color: #ebebeb;
     margin: 0;
     font-weight: 300;
     line-height: 1;
@@ -111,7 +89,7 @@ body {
 }
 
 .roxo {
-    color: #4b0bc0;
+    color: #a70de4;
 }
 
 .conteudo-container {
@@ -177,7 +155,7 @@ body {
     width: 80%;
     padding: 10px 14px;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 14px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
@@ -192,15 +170,51 @@ body {
 }
 
 .sidebar ul li a {
+    padding: 1px 25px;
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 18px;
     display: block;
     transition: 0.2s;
 }
 
-.sidebar ul li a:hover {
-    text-decoration: underline;
+.sidebar ul li a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.sidebar ul li a::before {
+    content: "•";
+    margin-right: 8px;
+    font-size: 20px;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    color: white;
+}
+
+.submenu {
+    display: none;
+    margin-left: 15px;
+    padding-left: 10px;
+    list-style: none;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    color: #fff;
+    padding: 8px;
+    text-align: left;
+    width: 100%;
 }
 
 section {

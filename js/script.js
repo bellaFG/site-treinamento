@@ -55,3 +55,27 @@ document.addEventListener("DOMContentLoaded", function () {
         conteudo.classList.toggle("expandido");
     });
 });
+
+const links = document.querySelectorAll('.sidebar ul li a');
+links.forEach(link => {
+    link.addEventListener('click', function () {
+        links.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+function toggleSubmenu(id) {
+    const submenu = document.getElementById(id);
+    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("toggleSidebar");
+    const sidebar = document.querySelector(".sidebar");
+    const conteudo = document.querySelector(".conteudo");
+
+    toggleButton.addEventListener("click", () => {
+        sidebar.classList.toggle("closed");
+        conteudo.classList.toggle("expandido");
+    });
+});
