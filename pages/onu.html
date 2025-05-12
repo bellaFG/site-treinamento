@@ -1,7 +1,151 @@
-<h2>Provisionamento de ONU</h2>
-<ol>
-    <li>Abra o contrato do cliente e clique em "Provisionar ONU (Beta)"</li>
-    <li>Selecione o equipamento pela identificação do técnico</li>
-    <li>Preencha ONUTamplente, login do contrato e VLAN</li>
-    <li>Verifique FTTx após cadastrar: sinal e conexão</li>
-</ol>
+<h1>Manual Prático: Diagnosticando Problemas de Internet</h1>
+
+<section>
+    <h2>Introdução</h2>
+    <p>Para oferecer um bom suporte aos nossos clientes, é essencial entender com o que estamos lidando e como os
+        equipamentos funcionam. Este manual vai te ajudar a identificar problemas na internet do cliente usando apenas a
+        observação das luzes indicadoras dos equipamentos e a verificação dos cabos conectados.</p>
+</section>
+
+<section>
+    <h2>Tipos de Equipamentos</h2>
+    <p>Atualmente, trabalhamos com dois tipos de distribuição de internet:</p>
+    <ul>
+        <li><strong>ONU + Roteador</strong></li>
+    </ul>
+
+    <h3>O que é a ONU?</h3>
+    <p>A ONU (Unidade de Rede Óptica) é o equipamento responsável por receber o sinal de internet vindo da fibra óptica.
+        Ela decodifica esse sinal e o envia para o roteador, que por sua vez distribui a internet para os dispositivos
+        da casa (via Wi-Fi ou cabo).</p>
+
+    <ul>
+        <li><strong>ONT</strong></li>
+    </ul>
+
+    <h3>O que é a ONT?</h3>
+    <p>A ONT (Terminal de Rede Óptica) é um equipamento que combina a função da ONU e do roteador em um só. Ela recebe,
+        decodifica e distribui o sinal, tudo no mesmo aparelho.</p>
+    <ul>
+        <li>Vantagens da ONT:</li>
+        <ul>
+            <li>Menor chance de erro por parte do cliente (como troca de cabos).</li>
+            <li>Mais estabilidade (menos travamentos).</li>
+        </ul>
+    </ul>
+</section>
+
+<section>
+    <h2>Diagnóstico com Base nas Luzes</h2>
+    <p>Ao prestar suporte, solicitamos um vídeo do equipamento mostrando as luzes e cabos. Isso nos ajuda a entender
+        melhor o problema.</p>
+
+    <h3>Luzes Indicadoras</h3>
+    <p>Essas luzes são quase sempre padrão:</p>
+    <ul>
+        <li><strong>Power (energia):</strong>
+            <ul>
+                <li>Verde: Ligada corretamente.</li>
+                <li>Apagada: Sem energia.</li>
+                <li><em>Solução:</em> Pedir para o cliente verificar se o equipamento está conectado à tomada.</li>
+            </ul>
+        </li>
+        <li><strong>PON (conexão com a rede):</strong>
+            <ul>
+                <li>Verde estática: Tudo normal.</li>
+                <li>Verde piscando: ONU não autenticada. <em>Solução:</em> Provisionar (descadastrar e cadastrar).</li>
+                <li>Vermelha: Sem conexão com a rede. <em>Solução:</em> Agendar visita técnica.</li>
+            </ul>
+        </li>
+        <li><strong>LOS (conexão da fibra):</strong>
+            <ul>
+                <li>Vermelha (piscando ou estática): Problema na fibra óptica. <em>Solução:</em> Agendar visita técnica.
+                </li>
+            </ul>
+        </li>
+        <li><strong>LAN (conexão com o roteador):</strong>
+            <ul>
+                <li>Verde: Conectado corretamente.</li>
+                <li>Apagada: Sem conexão. <em>Solução:</em> Verificar se o cabo RJ45 está conectado corretamente.</li>
+            </ul>
+        </li>
+    </ul>
+    <p><em>(A imagem de exemplo mostra uma ONU ZTE, mas independentemente do equipamento — seja ele um roteador, ONT ou
+            ONU — as luzes a serem analisadas serão sempre as mesmas.)</em></p>
+</section>
+
+<section>
+    <h2>Verificação das Portas e Cabos</h2>
+    <ul>
+        <li><strong>Na ONU:</strong> Usar sempre a primeira porta LAN (geralmente escrita como LAN ou LAN1).</li>
+        <li><strong>No roteador:</strong> Usar a porta WAN (geralmente azul ou destacada).</li>
+    </ul>
+    <p><strong>Erros comuns:</strong></p>
+    <ul>
+        <li>Cabo da ONU conectado na porta LAN do roteador.</li>
+        <li>Uso da porta LAN errada na ONU.</li>
+        <li>Cabo solto ou mal encaixado.</li>
+    </ul>
+</section>
+
+<section>
+    <h3>Quando há ONU + Roteador</h3>
+    <p>Se o cliente tem ONU + Roteador, ambos devem ser analisados. Luzes típicas: Power, PON, LOS, LAN, Wi-Fi, INT,
+        LAN1, LAN2, LAN3.</p>
+</section>
+
+<section>
+    <h3>Quando há ONT</h3>
+    <p>Na ONT, tudo está em um único equipamento. Não há LAN de entrada, apenas LANs de saída. Problemas nas LANs
+        geralmente são dos dispositivos, não da internet.</p>
+</section>
+
+<section>
+    <h2>Resumo dos Problemas Comuns</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Luz / Situação</th>
+                <th>Possível Causa</th>
+                <th>Ação Recomendável</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>LOS vermelha</td>
+                <td>Cabo de fibra rompido ou desconectado</td>
+                <td>Agendar visita técnica</td>
+            </tr>
+            <tr>
+                <td>PON piscando</td>
+                <td>ONU não autenticada no sistema</td>
+                <td>Provisionar (descadastrar e cadastrar)</td>
+            </tr>
+            <tr>
+                <td>Tudo verde mas sem internet</td>
+                <td>Equipamento travado</td>
+                <td>Reiniciar ou agendar visita</td>
+            </tr>
+            <tr>
+                <td>LAN apagada</td>
+                <td>Porta errada ou mau contato</td>
+                <td>Verificar cabos e conexões</td>
+            </tr>
+            <tr>
+                <td>Wi-Fi com falha</td>
+                <td>Problema no roteador ou dispositivo</td>
+                <td>Verificar roteador / orientar cliente</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section>
+    <h3>Dicas Finais</h3>
+    <ul>
+        <li>Sempre analise o equipamento com atenção.</li>
+        <li>Reforce com o cliente a importância de mostrar cabos e luzes.</li>
+        <li>Oriente com paciência e clareza.</li>
+        <li>Quando o problema persistir, agende visita técnica.</li>
+    </ul>
+</section>
