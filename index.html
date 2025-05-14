@@ -26,15 +26,29 @@
             <li><a href="#" data-pagina="introducao">Introdução</a></li>
 
             <li>
-                <button class="menu-toggle" data-submenu="submenu-cadastro">Cadastro ▾</button>
-                <ul id="submenu-cadastro" class="submenu">
-                    <li><a href="#" data-pagina="cadastro-cliente">Cadastro de Cliente</a></li>
-                    <li><a href="#" data-pagina="cadastro-contrato">Cadastro de Contrato</a></li>
+                <a href="#" class="menu-toggle" data-submenu="submenu-SGP">SGP ▾</a>
+                <ul id="submenu-SGP" class="submenu">
+                    <li><a href="#" data-pagina="sobre-sgp">Sobre o SGP</a></li>
+                    <li><a href="#" data-pagina="cadastro-cliente-sgp">Cadastro de Cliente</a></li>
+                    <li>
+                        <a href="#" class="menu-toggle" data-submenu="submenu-contrato">Cadastro de Contrato ▾</a>
+                        <ul id="submenu-contrato" class="submenu">
+                            <li><a href="#" data-pagina="contrato-internet">Contrato Internet</a></li>
+                            <li><a href="#" data-pagina="contrato-tv">Contrato TV</a></li>
+                            <li><a href="#" data-pagina="contrato-telefone">Contrato Telefone</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
 
-            <li><a href="#" data-pagina="fttx">FTTx</a></li>
-            <li><a href="#" data-pagina="onu">ONU</a></li>
+            <li>
+                <a href="#" class="menu-toggle" data-submenu="submenu-SmartOLT">SmartOLT ▾</a>
+                <ul id="submenu-SmartOLT" class="submenu">
+                    <li><a href="#" data-pagina="sobre-smartolt">Sobre o SmartOLT</a></li>
+                    <li><a href="#" data-pagina="autenticacao-onu">Autenticação de ONU</a></li>
+                    <li><a href="#" data-pagina="monitoramento">Monitoramento de Sinais</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 
@@ -52,7 +66,6 @@
 
     <script src="js/carregarPaginas.js"></script>
     <script src="js/script.js"></script>
-
 </body>
 
 </html>

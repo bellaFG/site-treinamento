@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     configurarSubmenus();
     configurarBuscaInterna();
     configurarLogoClick();
+    configurarLinksGeraisComDataPagina();
 });
 
 function configurarToggleSidebar() {
@@ -39,29 +40,60 @@ function configurarBuscaInterna() {
 
     if (campoBusca) {
         campoBusca.addEventListener("input", function () {
-            const termo = this.value.toLowerCase();
-            const links = document.querySelectorAll(".sidebar ul li");
-            const secoes = document.querySelectorAll(".conteudo section");
-            const conteudo = document.getElementById("conteudo-principal");
+            const termo = this.value.toLowerCase().trim();
+            const links = document.querySelectorAll(".sidebar a[data-pagina]");
             const mensagemVazia = document.getElementById("mensagem-vazia");
 
-            links.forEach(li => {
-                const texto = li.textContent.toLowerCase();
-                li.style.display = texto.includes(termo) ? "block" : "none";
+            let encontrou = false;
+
+            if (termo === "") {
+                const todosLi = document.querySelectorAll(".sidebar ul li");
+                todosLi.forEach(li => li.style.display = "block");
+
+                const submenus = document.querySelectorAll(".submenu");
+                submenus.forEach(sub => sub.style.display = "none");
+
+                if (mensagemVazia) mensagemVazia.style.display = "none";
+                return;
+            }
+
+            const todosLi = document.querySelectorAll(".sidebar ul li");
+            todosLi.forEach(li => li.style.display = "none");
+
+            const submenus = document.querySelectorAll(".submenu");
+            submenus.forEach(sub => sub.style.display = "none");
+
+            links.forEach(link => {
+                const texto = link.textContent.toLowerCase();
+
+                if (texto.includes(termo)) {
+                    const li = link.closest("li");
+                    if (li) li.style.display = "block";
+
+                    let parent = link.parentElement;
+                    while (parent && parent !== document) {
+                        if (parent.classList.contains("submenu")) {
+                            parent.style.display = "block";
+                        }
+                        if (parent.tagName === "LI") {
+                            parent.style.display = "block";
+                        }
+                        parent = parent.parentElement;
+                    }
+
+                    encontrou = true;
+                }
             });
 
-            if (conteudo) {
-                const texto = conteudo.innerText.toLowerCase();
-                const encontrado = texto.includes(termo);
-                conteudo.style.display = encontrado ? "block" : "none";
-
-                if (mensagemVazia) {
-                    mensagemVazia.style.display = (termo !== "" && !encontrado) ? "block" : "none";
-                }
+            if (mensagemVazia) {
+                mensagemVazia.style.display = encontrou ? "none" : "block";
             }
         });
     }
 }
+
+
+
 
 function configurarLogoClick() {
     const logo = document.querySelector('.logo-nome');
@@ -94,7 +126,13 @@ function limparSecao() {
         mensagemVazia.style.display = "none";
     }
 
-    conteudoPrincipal.style.display = "block";
+    if (conteudoPrincipal) {
+        conteudoPrincipal.style.display = "block";
+    }
+
+
+    const links = document.querySelectorAll(".sidebar ul li a");
+    links.forEach(link => link.classList.remove("active"));
 }
 
 function carregarPagina(nomeArquivo) {
@@ -112,10 +150,26 @@ function carregarPagina(nomeArquivo) {
             novo.innerHTML = html;
 
             document.querySelector(".conteudo-container").appendChild(novo);
+
+
+            marcarItemAtivoSidebar(nomeArquivo);
         })
         .catch(() => {
             alert("Erro ao carregar a página.");
         });
+}
+
+function marcarItemAtivoSidebar(nomePagina) {
+    const links = document.querySelectorAll('.sidebar ul li a');
+
+    links.forEach(link => {
+        const pagina = link.dataset.pagina;
+        if (pagina === nomePagina) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
 }
 
 function configurarLinksDePagina() {
@@ -132,4 +186,17 @@ function configurarLinksDePagina() {
             }
         });
     }
+}
+
+function configurarLinksGeraisComDataPagina() {
+    document.body.addEventListener("click", function (e) {
+        const alvo = e.target.closest('[data-pagina]');
+        if (alvo) {
+            e.preventDefault();
+            const pagina = alvo.dataset.pagina;
+            if (pagina) {
+                carregarPagina(pagina);
+            }
+        }
+    });
 }
