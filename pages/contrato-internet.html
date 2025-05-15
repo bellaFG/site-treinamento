@@ -1,7 +1,8 @@
 <section>
     <h1>Cadastro de Contrato</h1>
-    <p>Após o cadastro do cliente, o próximo passo é registrar o contrato de prestação de serviço. Este contrato define:
-    </p>
+    <p><strong>Passo a passo:</strong> Cadastrar contrato do cliente</p>
+    <p>Após o cadastro do cliente, o próximo passo é registrar o contrato de prestação de serviço (neste caso, o de
+        internet). Este contrato define:</p>
     <ul>
         <li>Data de início</li>
         <li>Serviços contratados</li>
@@ -9,5 +10,183 @@
         <li>Condições comerciais</li>
         <li>Prazo de fidelidade (se houver)</li>
     </ul>
-    <p>O contrato é obrigatório para formalizar a relação entre o cliente e a operadora.</p>
+    <p>O contrato é obrigatório para formalizar a relação entre a empresa e o cliente.</p>
+</section>
+
+<section>
+    <h2>Acessando a Área de Contratos</h2>
+    <figure class="imagem-container">
+        <img src="../img/contrato-internet-print1.png" alt="Acesso ao formulário de contrato de internet">
+        <figcaption class="legenda">
+            Figura 1 — Com o cadastro já finalizado, acesse <strong>Contratos → Cadastrar Contrato/Serviço</strong>.
+        </figcaption>
+    </figure>
+</section>
+
+<section>
+    <h2>Selecionando o Tipo de Contrato</h2>
+    <ul>
+        <li>Ao clicar em <strong>Cadastrar Contrato/Serviço</strong>, uma janela pop-up será aberta.</li>
+        <li>Há diferentes tipos de serviços disponíveis, cada um com um contrato específico.</li>
+        <li>Escolha o POP (Ponto de Presença), que define a região de ativação do contrato.</li>
+        <li>Após preencher todas as informações, clique em <strong>Selecionar</strong> para continuar.</li>
+    </ul>
+    <figure class="imagem-container">
+        <img src="../img/contrato-internet-print2.png" alt="Escolha do POP">
+        <figcaption class="legenda">Figura 2 — Escolha do POP.</figcaption>
+    </figure>
+</section>
+
+<section>
+    <h2>Preenchendo o Formulário do Contrato</h2>
+    <p>Com o formulário de contrato aberto, vamos começar a preencher os dados de acesso com base nas escolhas do
+        cliente:</p>
+    <ul>
+        <li>Plano contratado</li>
+        <li>Data de pagamento</li>
+        <li>Prazo de fidelidade</li>
+    </ul>
+    <p>Algumas informações seguem um padrão fixo, independente do cliente.</p>
+
+    <div class="legenda-campos">
+        <p class="legenda-azul">🟦 Em azul — Campos que devem ser preenchidos conforme as informações do cliente.</p>
+        <p class="legenda-vermelho">🟥 Em vermelho — Informações essenciais que sempre permanecem as mesmas.</p>
+    </div>
+
+    <figure class="imagem-container">
+        <img src="../img/contrato-internet-print3.png"
+            alt="Formulário de contrato com destaque nos campos obrigatórios">
+        <figcaption class="legenda">Figura 3 — Formulário de contrato com destaque nos campos obrigatórios.</figcaption>
+    </figure>
+</section>
+
+<section class="layout-lado-a-lado">
+    <div class="texto-ip">
+        <h2>Selecionando IP no Contrato</h2>
+        <ul>
+            <li>Clique na lupa ao lado do campo <strong>IP</strong>.</li>
+            <li>Uma nova janela pop-up será aberta.</li>
+            <li>No campo <strong>IP Pool</strong>, selecione <code>Pool_CGNAT</code>.</li>
+            <li>Em <strong>IP</strong>, escolha qualquer uma das opções numéricas disponíveis.</li>
+            <li>Feche a janela clicando fora dela e confirme a seleção para continuar.</li>
+        </ul>
+    </div>
+    <figure class="imagem-ip">
+        <img src="../img/contrato-internet-print4.png" alt="Seleção de IP no contrato">
+        <figcaption class="legenda">Figura — Seleção de IP no contrato.</figcaption>
+    </figure>
+</section>
+
+<section>
+    <h2>Login e Senha do Contrato</h2>
+    <p>O campo de login é preenchido com o RG do cliente em minúsculo, pois este é o padrão adotado:</p>
+    <ul>
+        <li>No campo <strong>Login</strong>, digite <code>rg</code> seguido do número do RG do cliente (sem espaços ou
+            pontos).</li>
+        <li>No campo <strong>Senha</strong>, utilize sempre a senha padrão: <code>23383653</code>.</li>
+    </ul>
+
+    <figure class="imagem-container">
+        <img src="../img/contrato-internet-print5.png"
+            alt="Formulário de contrato com destaque nos campos obrigatórios">
+        <figcaption class="legenda">Figura — Campos de login e senha destacados.</figcaption>
+    </figure>
+</section>
+
+<section>
+    <h2>Selecionando o Gerenciador CPE</h2>
+    <p>No campo de gerenciador CPE, selecione a opção <strong>madefor4it</strong>, utilizada para acesso remoto aos
+        equipamentos.</p>
+    <p>Certifique-se de que a caixa indicada pela seta vermelha esteja marcada.</p>
+
+    <figure class="imagem-container">
+        <img src="../img/contrato-internet-print6.png"
+            alt="Formulário de contrato com destaque nos campos obrigatórios">
+        <figcaption class="legenda">Figura — Seleção do gerenciador CPE.</figcaption>
+    </figure>
+</section>
+
+<section>
+    <h2>Dados do Plano: Portador, Forma de Cobrança e Vencimento</h2>
+    <ul>
+        <li><strong>Portador:</strong> Definido conforme o POP selecionado. Siga as orientações da empresa no momento do
+            cadastro.</li>
+        <li><strong>Forma de cobrança:</strong> Sempre <em>carnê</em>.</li>
+        <li><strong>Vencimento:</strong> Escolha uma das datas disponíveis e combine com o cliente.</li>
+    </ul>
+    <p>Mesmo com a escolha do cliente, este campo está em vermelho pois só pode ser preenchido com datas predefinidas.
+    </p>
+
+    <figure class="imagem-container">
+        <img src="../img/contrato-internet-print7.png"
+            alt="Formulário de contrato com destaque nos campos obrigatórios">
+        <figcaption class="legenda">Figura — Campos de cobrança e vencimento.</figcaption>
+    </figure>
+</section>
+
+<section class="layout-lado-a-lado">
+    <figure class="imagem-ip">
+        <img src="../img/contrato-internet-print8.png" alt="Campos de fidelidade no contrato">
+        <figcaption class="legenda">Figura — Campos de fidelidade.</figcaption>
+    </figure>
+    <div class="texto-ip">
+        <h2>Fidelidade no Contrato</h2>
+        <ul>
+            <li>Preencha os campos de <strong>fidelidade</strong> apenas se o cliente optar por se fidelizar.</li>
+            <li>A <strong>Data Inicial da Fidelidade</strong> será a data da solicitação do serviço.</li>
+            <li>Nesse caso, o tipo de contrato passa de <em>Contrato Fibra</em> para <em>Contrato Fibra Fidelidade</em>.
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>Atenção Redobrada: Endereços de Instalação e Cobrança</h2>
+    <p><strong>Importante:</strong> antes de prosseguir com o cadastro, <em>verifique cuidadosamente</em> os campos de
+        <strong>endereço de cobrança</strong> e <strong>endereço de instalação</strong>.
+    </p>
+    <p>Esses dados devem estar exatamente iguais aos informados no momento do cadastro do cliente. Qualquer divergência
+        pode causar problemas no atendimento ou na emissão de cobranças.</p>
+    <p>Os demais campos que não foram citados ou preenchidos podem ser ignorados, pois são utilizados apenas em casos
+        muito específicos.</p>
+</section>
+
+
+<section class="layout-lado-a-lado">
+    <div class="texto-ip">
+        <h2>Central do Assinante</h2>
+        <ul>
+            <li>No campo <strong>Login</strong>, utilize o <strong>CPF do cliente</strong> (somente números).</li>
+            <li>No campo <strong>Senha</strong>, utilize a senha padrão: <code>12786</code>.</li>
+        </ul>
+    </div>
+    <figure class="imagem-ip">
+        <img src="../img/contrato-internet-print9.png" alt="Preenchimento da Central do Assinante">
+        <figcaption class="legenda">Figura — Login da Central do Assinante.</figcaption>
+    </figure>
+</section>
+
+<section class="layout-lado-a-lado">
+    <div class="texto-ip">
+        <h2>Finalizando o Cadastro</h2>
+        <ul>
+            <li>No campo <strong>Modo de Aquisição</strong>, selecione a opção que indica que o equipamento é fornecido
+                enquanto o cliente estiver ativo.</li>
+            <li>Revise todas as informações preenchidas no contrato.</li>
+            <li>Clique no botão <strong>Cadastrar</strong> para concluir o processo.</li>
+        </ul>
+    </div>
+    <figure class="imagem-ip">
+        <img src="../img/contrato-internet-print10.png" alt="Finalização do cadastro de contrato">
+        <figcaption class="legenda">Figura — Finalização do cadastro.</figcaption>
+    </figure>
+</section>
+
+<section>
+    <div class="navegacao-sequencial">
+        <p>O próximo passo agora é gerar o carnê do nosso cliente.</p>
+        <button class="botao-proximo" data-pagina="gerar-carnê">
+            Gerar carnê →
+        </button>
+    </div>
 </section>

@@ -10,7 +10,7 @@ body {
 }
 
 #toggleSidebar {
-    position: absolute;
+    position: fixed;
     top: 10px;
     left: 10px;
     z-index: 1000;
@@ -257,7 +257,7 @@ body {
     background-color: #03a3ff;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 5px 10px;
     font-size: 15px;
     border-radius: 10px;
     cursor: pointer;
@@ -271,4 +271,48 @@ body {
 
 section {
     margin-bottom: 60px;
+}
+
+.layout-lado-a-lado {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.layout-lado-a-lado .texto-ip {
+    flex: 1;
+    text-align: left;
+}
+
+.layout-lado-a-lado .imagem-ip {
+    flex: 1;
+    max-width: 500px;
+}
+
+.layout-lado-a-lado .imagem-ip img {
+    width: 100%;
+    margin-top: 50px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .layout-lado-a-lado {
+        flex-direction: column;
+    }
+}
+
+.legenda-azul {
+    color: blue;
+}
+
+.legenda-vermelha {
+    color: red;
+}
+
+.mensagem-vazia {
+    display: none;
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
 }
