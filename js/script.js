@@ -200,19 +200,3 @@ function configurarLinksGeraisComDataPagina() {
         }
     });
 }
-
-
-document.querySelectorAll('[data-pagina]').forEach(link => {
-    link.addEventListener('click', () => {
-        const tela = document.getElementById('telaInicial');
-        const conteudo = document.getElementById('conteudoContainer');
-
-        if (tela) {
-            tela.style.display = 'none';
-        }
-
-        if (conteudo) {
-            conteudo.style.display = 'block';
-        }
-    });
-});
