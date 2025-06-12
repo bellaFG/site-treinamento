@@ -22,6 +22,11 @@
 
         <input type="text" id="pesquisa" placeholder="Pesquisar..." />
 
+
+        <div id="mensagem-vazia" class="mensagem-vazia">
+            Nenhum conteúdo encontrado.
+        </div>
+
         <ul>
             <li><a href="#" data-pagina="introducao">Introdução</a></li>
 
@@ -29,15 +34,17 @@
                 <a href="#" class="menu-toggle" data-submenu="submenu-SGP">SGP ▾</a>
                 <ul id="submenu-SGP" class="submenu">
                     <li><a href="#" data-pagina="sobre-sgp">Sobre o SGP</a></li>
-                    <li><a href="#" data-pagina="cadastro-cliente-sgp">Cadastro de Cliente</a></li>
+
                     <li>
                         <a href="#" class="menu-toggle" data-submenu="submenu-contrato">Cadastro de Contrato ▾</a>
                         <ul id="submenu-contrato" class="submenu">
+                            <li><a href="#" data-pagina="contrato-cliente">Contrato Cliente</a></li>
                             <li><a href="#" data-pagina="contrato-internet">Contrato Internet</a></li>
                             <li><a href="#" data-pagina="contrato-tv">Contrato TV</a></li>
                             <li><a href="#" data-pagina="contrato-telefone">Contrato Telefone</a></li>
-
                         </ul>
+                    </li>
+
                     <li>
                         <a href="#" class="menu-toggle" data-submenu="submenu-lentidao">Lentidão ▾</a>
                         <ul id="submenu-lentidao" class="submenu">
@@ -45,7 +52,6 @@
                         </ul>
                     </li>
                 </ul>
-            </li>
             </li>
 
             <li>
@@ -69,8 +75,7 @@
         </div>
     </main>
 
-    <script src="js/carregarPaginas.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script.js?v=1.0"></script>
 </body>
 
 </html>

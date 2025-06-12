@@ -92,9 +92,6 @@ function configurarBuscaInterna() {
     }
 }
 
-
-
-
 function configurarLogoClick() {
     const logo = document.querySelector('.logo-nome');
     if (logo) {
@@ -130,7 +127,6 @@ function limparSecao() {
         conteudoPrincipal.style.display = "block";
     }
 
-
     const links = document.querySelectorAll(".sidebar ul li a");
     links.forEach(link => link.classList.remove("active"));
 }
@@ -150,7 +146,6 @@ function carregarPagina(nomeArquivo) {
             novo.innerHTML = html;
 
             document.querySelector(".conteudo-container").appendChild(novo);
-
 
             marcarItemAtivoSidebar(nomeArquivo);
         })
