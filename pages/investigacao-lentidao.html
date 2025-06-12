@@ -1,4 +1,5 @@
 <h1>Passo a passo: Investigação de Lentidão de Internet</h1>
+
 <h2>Verificar o status do cliente</h2>
 <ul>
     <li>Se estiver <strong>offline</strong>, pode haver um problema de conexão.</li>
@@ -10,36 +11,39 @@
     <li>Dentro do cadastro do cliente, acessar o Extrato de Tráfego.</li>
     <li>Definir a data que queremos consultar e gerar o extrato.</li>
 </ul>
+
 <figure class="imagem-container">
-    <img src="..\img\extrato-de-trafego-print1.png" alt="Exemplo de extrato de tráfego">
+    <img src="img/extrato-de-trafego-print1.png" alt="Exemplo de extrato de tráfego" />
 </figure>
+
 <p>Analisar os valores de download e upload:</p>
 <ul>
     <li><strong>Kb’s</strong> → O cliente não está navegando na internet.</li>
     <li><strong>Mb’s ou Gb’s</strong> → O cliente está navegando normalmente.</li>
 </ul>
+
 <p>Verificar oscilações no sinal, observando se o cliente está se conectando e desconectando várias vezes ao longo do
     dia.</p>
 <p>Se houver muitas desconexões, a internet está <strong>oscilando</strong>.</p>
 
 <h2>Verificar o FTTx e os detalhes via OLT</h2>
 <ul>
-    <li>Acessar Contrato > FTT Detalhes para consultar as informações da rede.</li>
+    <li>Acessar Contrato &gt; FTT Detalhes para consultar as informações da rede.</li>
 </ul>
 
 <figure class="imagem-container">
-    <img src="..\img\extrato-de-trafego-print2.png" alt="Detalhes FTTx via OLT">
+    <img src="img/extrato-de-trafego-print2.png" alt="Detalhes FTTx via OLT" />
 </figure>
-O que é
-FTTx
-Trata
-se da tecnologia de fibra óptica usada para fornecer conexão ao cliente.
-No
-FTTx , analisar apenas o Sinal Óptico do Cliente , que indica a qualidade da
-conexão vinda da caixa de distribuição de internet.
-Se o sinal estiver acima de
-28,00 , significa que está muito alto e pode
-impactar na estabilidade.
+
+<section>
+    <h3>O que é FTTx</h3>
+    <p>Trata-se da tecnologia de fibra óptica usada para fornecer conexão ao cliente.</p>
+    <p>No <strong>FTTx</strong>, analisar apenas o Sinal Óptico do Cliente, que indica a qualidade da conexão vinda da
+        caixa de distribuição de internet.</p>
+    <p>Se o sinal estiver acima de <strong>28,00</strong>, significa que está muito alto e pode impactar na
+        estabilidade.</p>
+</section>
+
 <h2>Avaliação Final e Ação Necessária</h2>
 <ul>
     <li>Se todos os pontos estiverem dentro do esperado, a conexão do cliente está ok.</li>
@@ -56,7 +60,7 @@ impactar na estabilidade.
 </ul>
 
 <figure>
-    <img src="caminho-da-imagem-3.jpg" alt="Procedimento padrão IP">
+    <img src="img/caminho-da-imagem-3.jpg" alt="Procedimento padrão IP" />
 </figure>
 
 </body>
