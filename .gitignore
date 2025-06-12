@@ -1,0 +1,49 @@
+# Ignorar arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar diretórios e arquivos temporários do sistema
+__MACOSX/
+AppData/
+Cookies/
+Dados\ de\ Aplicativos/
+Recent/
+SendTo/
+Modelos/
+Meus\ Documentos/
+Menu\ Iniciar/
+
+# Ignorar arquivos de compilação do Visual Studio, VSCode e JetBrains
+.vscode/
+.idea/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignorar arquivos temporários e de cache
+*.log
+*.bak
+*.swp
+*.swo
+*.tmp
+*.pid
+*.seed
+
+# Ignorar arquivos gerados pelo NPM, como node_modules
+node_modules/
+
+# Ignorar arquivos de cache, compilações e backups de projetos
+*.bundle/
+*.cache/
+*.dbclient/
+*.dotnet/
+*.gnupg/
+*.lesshst
+*.local/
+*.nuget/
+*.templateengine/
+*.vscode/
+
+
