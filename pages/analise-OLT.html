@@ -1,0 +1,91 @@
+<section>
+    <h2>🔍 Pontos para Checar na OLT Durante o Atendimento</h2>
+    <p>Antes de abrir chamado ou agendar visita, analise esses pontos via OLT para entender o real estado da ONU do
+        cliente:</p>
+
+    <h3>✅ Checklist de Análise Rápida da ONU</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>O que olhar</th>
+                <th>Valor Ideal</th>
+                <th>Problemas Comuns</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>🟢 Run state</td>
+                <td>Estado atual da ONU</td>
+                <td class="ok">Online</td>
+                <td class="erro">Down ou Initial = ONU fora de serviço</td>
+            </tr>
+            <tr>
+                <td>🔧 Last down cause</td>
+                <td>Última causa de queda</td>
+                <td>-</td>
+                <td>
+                    <strong>Dying-gasp:</strong> Falta de energia<br>
+                    <strong>LOS / LOFI:</strong> Possível rompimento de fibra
+                </td>
+            </tr>
+            <tr>
+                <td>📶 Rx optical power (ONU)</td>
+                <td>Potência de recepção da ONU</td>
+                <td>-8 a -27 dBm</td>
+                <td class="alerta">Fora dessa faixa = sinal ruim ou fibra suja</td>
+            </tr>
+            <tr>
+                <td>📶 OLT Rx ONT power</td>
+                <td>Potência que a OLT recebe da ONU</td>
+                <td>Semelhante ao Rx da ONU</td>
+                <td>Grande diferença = possível problema de leitura</td>
+            </tr>
+            <tr>
+                <td>💡 Tx optical power</td>
+                <td>Potência de transmissão da ONU</td>
+                <td>0 a 5 dBm</td>
+                <td class="alerta">Fora disso = problema de transmissão</td>
+            </tr>
+            <tr>
+                <td>🔌 Laser bias current</td>
+                <td>Corrente do laser óptico</td>
+                <td>5 a 15 mA</td>
+                <td>Muito baixo ou alto = Laser da ONU pode estar falhando</td>
+            </tr>
+            <tr>
+                <td>🌡️ Temperatura</td>
+                <td>Temperatura interna da ONU</td>
+                <td>Abaixo de 65 °C</td>
+                <td class="alerta">Acima disso = Superaquecimento</td>
+            </tr>
+            <tr>
+                <td>⚡ Voltagem (Voltage)</td>
+                <td>Tensão de alimentação do laser</td>
+                <td>3.0 a 3.6 V</td>
+                <td>Fora da faixa = possível falha elétrica</td>
+            </tr>
+            <tr>
+                <td>📍 Distância (ONT distance)</td>
+                <td>Distância da ONU até a OLT</td>
+                <td>Coerente com a distância física da região</td>
+                <td>Valor muito alto ou estranho = ONU em CTO errada ou erro de configuração</td>
+            </tr>
+            <tr>
+                <td>📅 Online duration</td>
+                <td>Tempo que a ONU está online</td>
+                <td>Estável (dias ou semanas)</td>
+                <td>Muito recente ou oscilando = Problema de energia ou fibra</td>
+            </tr>
+            <tr>
+                <td>🧬 Config / Match state</td>
+                <td>Estado de configuração</td>
+                <td>Normal / Match</td>
+                <td>Se diferente disso = ONU mal provisionada ou erro de configuração</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><strong>Dica extra:</strong> Se quiser, posso criar uma versão desse checklist em PDF ou planilha Excel para
+        download rápido. Só me pedir! 😊</p>
+</section>
