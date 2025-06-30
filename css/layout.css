@@ -356,3 +356,102 @@ section {
     color: rgb(255, 255, 255);
     padding: 10px;
 }
+
+.ok {
+    color: green;
+    font-weight: bold;
+}
+
+.alerta {
+    color: orange;
+    font-weight: bold;
+}
+
+.erro {
+    color: red;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+table thead {
+    background-color: #f2f2f2;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+article h4 {
+    color: #333;
+    margin-top: 10px;
+}
+
+.parametro {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+}
+
+.parametro h3 {
+    color: #004080;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.definicao,
+.funcionamento,
+.impacto,
+.causas,
+.diagnostico,
+.solucao {
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.definicao {
+    background-color: #f0f8ff;
+}
+
+.funcionamento {
+    background-color: #e6f7ff;
+}
+
+.impacto {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+}
+
+.causas {
+    background-color: #e9f7ef;
+}
+
+.diagnostico {
+    background-color: #f1f8e9;
+}
+
+.solucao {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.curiosidade {
+    background-color: #f9f9f9;
+    border-left: 5px solid #17a2b8;
+    padding: 10px 15px;
+    margin-top: 15px;
+}

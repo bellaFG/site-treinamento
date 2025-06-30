@@ -1,9 +1,9 @@
 <section>
     <h2>🔍 Pontos para Checar na OLT Durante o Atendimento</h2>
-    <p>Antes de abrir chamado ou agendar visita, analise esses pontos via OLT para entender o real estado da ONU do
-        cliente:</p>
+    <p>Antes de abrir um chamado ou agendar uma visita, analise os seguintes pontos via OLT para entender o real estado
+        da ONU do cliente.</p>
 
-    <h3>✅ Checklist de Análise Rápida da ONU</h3>
+    <h3>✅ Checklist Rápido</h3>
     <table>
         <thead>
             <tr>
@@ -15,40 +15,40 @@
         </thead>
         <tbody>
             <tr>
-                <td>🟢 Run state</td>
+                <td>🟢 Run State</td>
                 <td>Estado atual da ONU</td>
                 <td class="ok">Online</td>
                 <td class="erro">Down ou Initial = ONU fora de serviço</td>
             </tr>
             <tr>
-                <td>🔧 Last down cause</td>
+                <td>🔧 Last Down Cause</td>
                 <td>Última causa de queda</td>
                 <td>-</td>
                 <td>
                     <strong>Dying-gasp:</strong> Falta de energia<br>
-                    <strong>LOS / LOFI:</strong> Possível rompimento de fibra
+                    <strong>LOS / LOFI:</strong> Rompimento ou desconexão de fibra
                 </td>
             </tr>
             <tr>
-                <td>📶 Rx optical power (ONU)</td>
+                <td>📶 Rx Optical Power (ONU)</td>
                 <td>Potência de recepção da ONU</td>
                 <td>-8 a -27 dBm</td>
-                <td class="alerta">Fora dessa faixa = sinal ruim ou fibra suja</td>
+                <td class="alerta">Fora dessa faixa = Sinal ruim </td>
             </tr>
             <tr>
-                <td>📶 OLT Rx ONT power</td>
+                <td>📶 OLT Rx ONT Power</td>
                 <td>Potência que a OLT recebe da ONU</td>
                 <td>Semelhante ao Rx da ONU</td>
-                <td>Grande diferença = possível problema de leitura</td>
+                <td>Grande diferença = Possível problema de leitura</td>
             </tr>
             <tr>
-                <td>💡 Tx optical power</td>
+                <td>💡 Tx Optical Power</td>
                 <td>Potência de transmissão da ONU</td>
                 <td>0 a 5 dBm</td>
-                <td class="alerta">Fora disso = problema de transmissão</td>
+                <td class="alerta">Fora disso = Problema de transmissão</td>
             </tr>
             <tr>
-                <td>🔌 Laser bias current</td>
+                <td>🔌 Laser Bias Current</td>
                 <td>Corrente do laser óptico</td>
                 <td>5 a 15 mA</td>
                 <td>Muito baixo ou alto = Laser da ONU pode estar falhando</td>
@@ -63,29 +63,184 @@
                 <td>⚡ Voltagem (Voltage)</td>
                 <td>Tensão de alimentação do laser</td>
                 <td>3.0 a 3.6 V</td>
-                <td>Fora da faixa = possível falha elétrica</td>
+                <td>Fora da faixa = Possível falha elétrica</td>
             </tr>
             <tr>
-                <td>📍 Distância (ONT distance)</td>
+                <td>📍 Distância (ONT Distance)</td>
                 <td>Distância da ONU até a OLT</td>
-                <td>Coerente com a distância física da região</td>
-                <td>Valor muito alto ou estranho = ONU em CTO errada ou erro de configuração</td>
+                <td>Coerente com a distância física</td>
+                <td>Valor estranho = ONU em CTO errada ou erro de configuração</td>
             </tr>
             <tr>
-                <td>📅 Online duration</td>
+                <td>📅 Online Duration</td>
                 <td>Tempo que a ONU está online</td>
                 <td>Estável (dias ou semanas)</td>
-                <td>Muito recente ou oscilando = Problema de energia ou fibra</td>
+                <td>Online recente = Possível queda recente por energia ou fibra</td>
             </tr>
             <tr>
-                <td>🧬 Config / Match state</td>
-                <td>Estado de configuração</td>
+                <td>🧬 Config / Match State</td>
+                <td>Estado de configuração da ONU</td>
                 <td>Normal / Match</td>
                 <td>Se diferente disso = ONU mal provisionada ou erro de configuração</td>
             </tr>
         </tbody>
     </table>
 
-    <p><strong>Dica extra:</strong> Se quiser, posso criar uma versão desse checklist em PDF ou planilha Excel para
-        download rápido. Só me pedir! 😊</p>
-</section>
+    <section>
+        <h2>🔍 Análise Técnica da ONU via OLT</h2>
+        <p>Antes de abrir chamado ou agendar visita, analise os seguintes parâmetros técnicos para entender o real
+            estado da ONU do cliente.</p>
+
+        <!-- RUN STATE -->
+        <article class="parametro">
+            <h3>🟢 Run State – Estado Operacional da ONU</h3>
+
+            <div class="definicao">
+                <h4>O que é:</h4>
+                <p>Indica o estado de operação da ONU. Basicamente, diz se ela está online e comunicando com a OLT ou
+                    não.</p>
+            </div>
+
+            <div class="funcionamento">
+                <h4>Como funciona fisicamente:</h4>
+                <p>Para uma ONU estar em estado <strong>Online</strong>, ela precisa completar com sucesso o processo de
+                    handshaking com a OLT, que inclui autenticação óptica, sincronização de camada física e lógica.</p>
+            </div>
+
+            <div class="impacto">
+                <h4>Impacto quando está em estado Down ou Initial:</h4>
+                <p>O cliente fica completamente sem acesso à internet, telefone ou TV (em redes FTTH triple play).
+                    Nenhum pacote de dados trafega entre a ONU e a OLT.</p>
+            </div>
+
+            <div class="causas">
+                <h4>Principais causas de ONU em Down ou Initial:</h4>
+                <ul>
+                    <li>ONU desligada (sem energia)</li>
+                    <li>Problema na fibra (rompimento, desconexão)</li>
+                    <li>ONU mal provisionada ou não autorizada na OLT</li>
+                </ul>
+            </div>
+
+            <div class="diagnostico">
+                <h4>Como diagnosticar:</h4>
+                <p>Verificar se há sinal óptico suficiente, revisar configuração na OLT e confirmar com o cliente se a
+                    ONU está ligada fisicamente.</p>
+            </div>
+
+            <div class="solucao">
+                <h4>Como resolver:</h4>
+                <ul>
+                    <li>Solicitar ao cliente que confira cabos e energia</li>
+                    <li>Reprovisionar ou reautorizar a ONU na OLT</li>
+                    <li>Abrir chamado se suspeitar de rompimento de fibra</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- LAST DOWN CAUSE -->
+        <article class="parametro">
+            <h3>🔧 Last Down Cause – Motivo da Última Queda</h3>
+
+            <div class="definicao">
+                <h4>O que é:</h4>
+                <p>Campo que mostra o motivo da última vez que a ONU caiu (foi para estado Down).</p>
+            </div>
+
+            <div class="funcionamento">
+                <h4>Como a OLT determina isso:</h4>
+                <p>A OLT analisa os eventos da camada física e de link da ONU. Quando ocorre uma queda, ela registra o
+                    motivo baseado no último erro detectado.</p>
+            </div>
+
+            <div class="impacto">
+                <h4>Impacto para o cliente:</h4>
+                <p>Dependendo da causa da queda, o cliente pode ter ficado sem serviço por minutos ou horas.</p>
+            </div>
+
+            <div class="causas">
+                <h4>Principais causas listadas:</h4>
+                <ul>
+                    <li><strong>Dying-Gasp:</strong> ONU perdeu alimentação elétrica de forma repentina.</li>
+                    <li><strong>LOS / LOFI:</strong> Perda total de sinal óptico. Indica rompimento de fibra, desconexão
+                        ou conector mal encaixado.</li>
+                    <li><strong>OLT Reset:</strong> Reinicialização da OLT ou do slot de serviço.</li>
+                </ul>
+            </div>
+
+            <div class="diagnostico">
+                <h4>Como diagnosticar:</h4>
+                <p>Analisar o histórico de quedas da ONU. Se for sempre Dying-Gasp, é indicativo de instabilidade
+                    elétrica no cliente.</p>
+            </div>
+
+            <div class="solucao">
+                <h4>Como resolver:</h4>
+                <ul>
+                    <li>Para Dying-Gasp: Cliente deve revisar fonte de energia e estabilidade elétrica.</li>
+                    <li>Para LOS: Verificar integridade da fibra, conectores e caixas de distribuição.</li>
+                    <li>Para OLT Reset: Verificar logs de manutenção da própria OLT.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- RX OPTICAL POWER -->
+        <article class="parametro">
+            <h3>📶 Rx Optical Power (ONU) – Nível de Sinal Recebido</h3>
+
+            <div class="definicao">
+                <h4>O que é:</h4>
+                <p>É a potência óptica (em dBm) que a ONU está recebendo da OLT. Indica a qualidade do sinal de
+                    downstream.</p>
+            </div>
+
+            <div class="funcionamento">
+                <h4>Como funciona fisicamente:</h4>
+                <p>O laser da OLT transmite luz pela fibra. A ONU recebe essa luz através de um fotodiodo interno que
+                    converte o sinal óptico em sinal elétrico. Quanto mais negativo o valor, mais fraca a luz recebida.
+                </p>
+            </div>
+
+            <div class="impacto">
+                <h4>Impacto de sinal baixo:</h4>
+                <p>O sinal chega fraco ao fotodiodo, aumentando os erros de leitura de bits na camada física. Resultado:
+                    lentidão, perda de pacotes, intermitência ou queda total da conexão.</p>
+            </div>
+
+            <div class="causas">
+                <h4>Principais causas de sinal baixo:</h4>
+                <ul>
+                    <li>Fibra suja ou mal conectada</li>
+                    <li>Caixa de distribuição (CTO) com perda alta</li>
+                    <li>Splitter com defeito</li>
+                    <li>ONU muito longe da OLT (distância fora de projeto)</li>
+                    <li>Fibra rompida ou esmagada</li>
+                </ul>
+            </div>
+
+            <div class="diagnostico">
+                <h4>Como diagnosticar:</h4>
+                <ul>
+                    <li>Comparar Rx do cliente com outros clientes na mesma caixa</li>
+                    <li>Se só um cliente estiver ruim → foco em drop interno</li>
+                    <li>Se vários estiverem com sinal ruim → suspeita de problema na caixa (CTO)</li>
+                </ul>
+            </div>
+
+            <div class="solucao">
+                <h4>Como resolver:</h4>
+                <ul>
+                    <li>Limpeza de conectores</li>
+                    <li>Teste com Power Meter</li>
+                    <li>Revisão da fibra do cliente até a CTO</li>
+                    <li>Abertura de chamado para manutenção externa, se for caso coletivo</li>
+                </ul>
+            </div>
+
+            <aside class="curiosidade">
+                <h4>🔎 Curiosidade Técnica: Por que o termo "Caixa Alta" gera confusão?</h4>
+                <p>Embora o termo sugira um sinal muito forte, na prática significa que a <strong>perda óptica da CTO
+                        está alta</strong>, causando sinais muito baixos nas ONUs dos clientes.</p>
+            </aside>
+        </article>
+    </section>
